@@ -18,7 +18,7 @@ class Category(models.Model):
         return self.name
     
 class Post(models.Model):
-    title = models.TextField(max_length = 100, verbose_name = "Nombre")
+    title = models.TextField(max_length = 100, verbose_name = "Titulo")
     content = models.TextField(verbose_name= "Contenido")
     published = models.DateTimeField(verbose_name="Hora de publicacion", default=now)
     image = models.ImageField(verbose_name="Imagen", upload_to="blog", null=True, blank=True)
