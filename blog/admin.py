@@ -12,6 +12,10 @@ class PostAdmin(admin.ModelAdmin):
     list_display = ('title', 'author', 'published')
     ordering = ('author', 'published')
     search_fields = ('title', 'author__username')
+    # Para poder buscar por fechas
+    date_hierarchy = 'published'
+    #Para crear filtros
+    list_filter = ('author__username', 'published', 'categories__name')
 
 admin.site.register(Category, CategoryAdmin)
 
